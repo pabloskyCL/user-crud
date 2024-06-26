@@ -29,7 +29,7 @@ class AuthController extends Controller
         if (!Auth::attempt($credentials)) {
             return response()->json([
                 'message' => 'usuario o contraseña invalidos', ['error' => 'usuario o contraseña invalidos'],
-            ]);
+            ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
         }
 
         $user = $request->user();
