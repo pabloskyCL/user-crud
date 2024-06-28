@@ -16,6 +16,7 @@ class AuthController extends Controller
 
         if ($data) {
             $user = new User($data);
+            $user->assignRole('User');
             $user->save();
 
             return response()->json(['success' => true, 'message' => 'usuario creado con exito'], JsonResponse::HTTP_CREATED);
@@ -38,7 +39,10 @@ class AuthController extends Controller
 
         return response()->json([
             'user' => [
+                'id' => $user->id,
+                'email' => $user->email,
                 'name' => $user->name,
+                'role' => $user->roles 
             ],
             'accessToken' => $token,
         ]);
