@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginUserRequest;
 use App\Http\Requests\RegisterUserRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
@@ -38,12 +39,7 @@ class AuthController extends Controller
         $token = $user->createToken('loginToken')->plainTextToken;
 
         return response()->json([
-            'user' => [
-                'id' => $user->id,
-                'email' => $user->email,
-                'name' => $user->name,
-                'role' => $user->roles 
-            ],
+            'user' => new UserResource($user),
             'accessToken' => $token,
         ]);
     }
