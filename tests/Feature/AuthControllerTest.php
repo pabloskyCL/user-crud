@@ -40,9 +40,9 @@ class AuthControllerTest extends TestCase
     public function test_register_user_success(): void
     {
         $response = $this->post('api/register', [
-            'name' => 'test',
-            'email' => 'test@example.com',
-            'password' => '123Asd..'
+            'name' => 'test register',
+            'email' => 'prueba@registro.com',
+            'password' => '5Dwagost.'
         ]);
 
         $response->assertStatus(201);
