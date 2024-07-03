@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/user', [UserController::class, 'create']);
     Route::put('/user', [UserController::class, 'update']);
     Route::delete('/user', [UserController::class, 'delete']);
+    Route::put('/changePassword', [UserController::class, 'changePassword']);
 });
 
 Route::get('/role', [RoleController::class, 'index']);

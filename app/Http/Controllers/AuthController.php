@@ -11,13 +11,15 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+
+
     public function register(RegisterUserRequest $request)
     {
         $data = $request->validated();
 
         if ($data) {
             $user = new User($data);
-            $user->assignRole('User');
+            $user->syncRoles('User');
             $user->save();
 
             return response()->json(['success' => true, 'message' => 'usuario creado con exito'], JsonResponse::HTTP_CREATED);
