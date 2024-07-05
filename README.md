@@ -1,6 +1,7 @@
 ### Instrucciones para levantar el proyecto
 
 * pre-requisito tener instalado docker y docker compose
+* en la rama pablo-quiroz de cada repositorio esta el desarrollo por lo que una vez clonado cambiarse de rama a pablo-quiroz
 
 copiar archivo .env.example  en la carpeta raiz y cambiar el nombre a .env
 
