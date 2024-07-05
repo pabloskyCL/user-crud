@@ -92,3 +92,5 @@ luego ingresar a la carpeta frontend y lanzar npm install y npm run build
 para cargar los test una vez dentro el contenedor user-crud-api lanzar php artisan test --coverage
 
 para cargar los test del frontend ingresar a la carpega frontend y ejecutar npm run coverage
+
+falto agregar un tooltip para ayudar a la orientación del formato, el formato de la contraseña debe ser de entre 2-15 caracteres, tener una mayuscula, un digito y un caracter especial de esta lista: @$!%*?&.#_-
